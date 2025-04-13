@@ -5,6 +5,8 @@
 #include "particle.hpp"
 #include <vector>
 
+// Aggiungi la dichiarazione della funzione
+float getValidFloat(const std::string &prompt, float min, float max); 
 
 // Risultati statistici
 struct StatsResult {
@@ -14,7 +16,7 @@ struct StatsResult {
     float kurtosis;
 };
 
-void save_to_file(const std::string& filename, const std::vector<float>&data); //funzione per scrivere su testo
+void save_to_file(const std::string& filename, const std::vector<float>&data); // Funzione per scrivere su testo
 
 // Funzione principale di simulazione
 void run_statistics(

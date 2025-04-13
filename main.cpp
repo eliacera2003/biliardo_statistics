@@ -59,6 +59,7 @@ int main()
     float theta0=(theta0_deg * static_cast<float>(M_PI)) / 180.0f;
     float velocity = getValidFloat("Enter initial velocity: ", 0, 2000);
 
+
   // Crea la particella con i parametri inseriti
   Particle particle(y0, theta0, velocity);
 
@@ -71,10 +72,10 @@ int main()
 
  // 1. Lettura da tastiera dei parametri statistici
  float mu_y0 = getValidFloat("Enter mean of y0 (mu_y0): ", -r1, r1);
- float sigma_y0 = getValidFloat("Enter standard deviation of y0 (sigma_y0): ", 0.0f, r1);
+ float sigma_y0 = getValidFloat("Enter standard deviation of y0 (sigma_y0): ", -r1 + mu_y0, r1 - mu_y0);
 
  float mu_theta0 = getValidFloat("Enter mean of theta0 in degrees (mu_theta0): ", -90.0f, 90.0f);
- float sigma_theta0 = getValidFloat("Enter stddev of theta0 in degrees (sigma_theta0): ", 0.0f, 90.0f);
+ float sigma_theta0 = getValidFloat("Enter stddev of theta0 in degrees (sigma_theta0): ", -90.0f + mu_theta0 , 90.0f - mu_theta0);
 
  int N = static_cast<int>(getValidFloat("How many particles to simulate? ", 1, 10000));
 
@@ -92,7 +93,7 @@ int main()
 
   window.setVerticalSyncEnabled(false);
 
-  sf::Color darkGreen(3, 38, 7);
+  sf::Color darkGreen(3, 99, 14);
 
   // Disegna l'asse X (orizzontale)
   sf::RectangleShape xAxis(sf::Vector2f(

@@ -1,6 +1,5 @@
 #include "statistics.hpp"
 #include "particle.hpp"
-
 #include <iostream>
 #include <fstream>
 #include <random>
